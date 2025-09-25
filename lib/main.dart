@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:mosque_dashboard/navigationPage.dart';
-import 'package:mosque_dashboard/signinPage.dart';
+import 'package:mosque_dashboard/pages/navigationPage.dart';
+import 'package:mosque_dashboard/pages/signinPage.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:syncfusion_localizations/syncfusion_localizations.dart';
-
 
 void main() {
   runApp(MyApp());
@@ -62,8 +61,10 @@ class MyApp extends StatelessWidget {
             ),
           ),
         ),
+        iconTheme: IconThemeData(color: Color(0xFFFFD700)),
       ),
-      home: SignInPage(),
+      // home: SignInPage(),
+      home: NavigationPage(),
       routes: {
         '/navigation': (context) => NavigationPage(),
       },

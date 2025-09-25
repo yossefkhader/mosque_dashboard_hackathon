@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:mosque_dashboard/pages/aiPage.dart';
 import 'package:mosque_dashboard/appConsts.dart';
-import 'package:mosque_dashboard/calendarPage.dart';
-import 'package:mosque_dashboard/dashboardPage.dart';
-import 'package:mosque_dashboard/simplePages.dart';
-
+import 'package:mosque_dashboard/pages/calendarPage.dart';
+import 'package:mosque_dashboard/pages/coursesPage.dart';
+import 'package:mosque_dashboard/pages/dashboardPage.dart';
+import 'package:mosque_dashboard/pages/settingsPages.dart';
 
 class NavigationPage extends StatefulWidget {
   @override
@@ -17,7 +18,7 @@ class _NavigationPageState extends State<NavigationPage> {
     DashboardPage(),
     CalendarPage(),
     AIPage(),
-    ReportsPage(),
+    CoursesPage(),
     SettingsPage(),
   ];
 
@@ -51,7 +52,7 @@ class _NavigationPageState extends State<NavigationPage> {
               children: [
                 // Header
                 Padding(
-                  padding: EdgeInsets.all(20), 
+                  padding: EdgeInsets.all(20),
                   child: Image.asset(
                     AppConsts.logoPath,
                     fit: BoxFit.fitWidth,
@@ -59,7 +60,7 @@ class _NavigationPageState extends State<NavigationPage> {
                 ),
 
                 Divider(color: Colors.white24),
-                
+
                 // Navigation Items
                 Expanded(
                   child: ListView.builder(
@@ -67,23 +68,31 @@ class _NavigationPageState extends State<NavigationPage> {
                     itemBuilder: (context, index) {
                       final item = _navItems[index];
                       final isSelected = _selectedIndex == index;
-                      
+
                       return Container(
-                        margin: EdgeInsets.symmetric(horizontal: 10, vertical: 2),
+                        margin:
+                            EdgeInsets.symmetric(horizontal: 10, vertical: 2),
                         decoration: BoxDecoration(
-                          color: isSelected ? Color(0xFFFFD700).withOpacity(0.2) : null,
+                          color: isSelected
+                              ? Color(0xFFFFD700).withOpacity(0.2)
+                              : null,
                           borderRadius: BorderRadius.circular(10),
                         ),
                         child: ListTile(
                           leading: Icon(
                             item.icon,
-                            color: isSelected ? Color(0xFFFFD700) : Colors.white70,
+                            color:
+                                isSelected ? Color(0xFFFFD700) : Colors.white70,
                           ),
                           title: Text(
                             item.label,
                             style: TextStyle(
-                              color: isSelected ? Color(0xFFFFD700) : Colors.white70,
-                              fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
+                              color: isSelected
+                                  ? Color(0xFFFFD700)
+                                  : Colors.white70,
+                              fontWeight: isSelected
+                                  ? FontWeight.bold
+                                  : FontWeight.normal,
                             ),
                           ),
                           onTap: () {
@@ -96,7 +105,7 @@ class _NavigationPageState extends State<NavigationPage> {
                     },
                   ),
                 ),
-                
+
                 // Logout Button
                 Container(
                   padding: EdgeInsets.all(20),
@@ -113,7 +122,10 @@ class _NavigationPageState extends State<NavigationPage> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Icon(Icons.logout, color: Color(0xFFFFD700),),
+                          Icon(
+                            Icons.logout,
+                            color: Color(0xFFFFD700),
+                          ),
                           SizedBox(width: 10),
                           Text('تسجيل الخروج'),
                         ],
@@ -124,7 +136,7 @@ class _NavigationPageState extends State<NavigationPage> {
               ],
             ),
           ),
-          
+
           // Main Content Area
           Expanded(
             child: _pages[_selectedIndex],
