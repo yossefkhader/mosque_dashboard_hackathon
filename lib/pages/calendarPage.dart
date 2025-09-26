@@ -41,7 +41,7 @@ class _CalendarPageState extends State<CalendarPage> {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: Text('خطأ في تحميل الأحداث: $e'),
-          backgroundColor: Colors.red,
+          backgroundColor: AppConsts.errorColor,
         ),
       );
     }
@@ -63,7 +63,7 @@ class _CalendarPageState extends State<CalendarPage> {
                 style: TextStyle(
                   fontSize: 28,
                   fontWeight: FontWeight.bold,
-                  color: Color(0xFFFFD700),
+                  color: AppConsts.secondaryColor,
                 ),
               ),
               FloatingActionButton(

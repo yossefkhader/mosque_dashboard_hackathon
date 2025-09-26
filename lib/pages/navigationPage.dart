@@ -57,11 +57,14 @@ class _NavigationPageState extends State<NavigationPage> {
           Container(
             width: 250,
             decoration: BoxDecoration(
-              color: AppConsts.primaryColor, // Darker shade
+              color: AppConsts.surfaceColorDark,
+              border: Border(
+                right: BorderSide(color: AppConsts.borderColor, width: 1),
+              ),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.black.withOpacity(0.4),
-                  blurRadius: 10,
+                  color: Colors.black.withOpacity(0.3),
+                  blurRadius: 12,
                   offset: Offset(2, 0),
                 ),
               ],
@@ -77,7 +80,7 @@ class _NavigationPageState extends State<NavigationPage> {
                   ),
                 ),
 
-                Divider(color: Colors.white24),
+                Divider(color: AppConsts.dividerColor),
 
                 // Navigation Items
                 Expanded(
@@ -89,28 +92,39 @@ class _NavigationPageState extends State<NavigationPage> {
 
                       return Container(
                         margin:
-                            EdgeInsets.symmetric(horizontal: 10, vertical: 2),
+                            EdgeInsets.symmetric(horizontal: 12, vertical: 4),
                         decoration: BoxDecoration(
                           color: isSelected
-                              ? Color(0xFFFFD700).withOpacity(0.2)
+                              ? AppConsts.secondaryColor.withOpacity(0.15)
                               : null,
-                          borderRadius: BorderRadius.circular(10),
+                          borderRadius: BorderRadius.circular(12),
+                          border: isSelected
+                              ? Border.all(
+                                  color:
+                                      AppConsts.secondaryColor.withOpacity(0.3),
+                                  width: 1)
+                              : null,
                         ),
                         child: ListTile(
+                          contentPadding:
+                              EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                           leading: Icon(
                             item.icon,
-                            color:
-                                isSelected ? Color(0xFFFFD700) : Colors.white70,
+                            color: isSelected
+                                ? AppConsts.secondaryColor
+                                : AppConsts.textColorTertiary,
+                            size: 22,
                           ),
                           title: Text(
                             item.label,
                             style: TextStyle(
                               color: isSelected
-                                  ? Color(0xFFFFD700)
-                                  : Colors.white70,
+                                  ? AppConsts.secondaryColor
+                                  : AppConsts.textColorSecondary,
                               fontWeight: isSelected
-                                  ? FontWeight.bold
-                                  : FontWeight.normal,
+                                  ? FontWeight.w600
+                                  : FontWeight.w500,
+                              fontSize: 15,
                             ),
                           ),
                           onTap: () {
@@ -134,18 +148,30 @@ class _NavigationPageState extends State<NavigationPage> {
                         Navigator.pushReplacementNamed(context, '/');
                       },
                       style: OutlinedButton.styleFrom(
-                        side: BorderSide(color: Color(0xFFFFD700)),
-                        foregroundColor: Color(0xFFFFD700),
+                        side:
+                            BorderSide(color: AppConsts.errorColor, width: 1.5),
+                        foregroundColor: AppConsts.errorColor,
+                        padding: EdgeInsets.symmetric(vertical: 12),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10),
+                        ),
                       ),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Icon(
                             Icons.logout,
-                            color: Color(0xFFFFD700),
+                            color: AppConsts.errorColor,
+                            size: 20,
                           ),
-                          SizedBox(width: 10),
-                          Text('تسجيل الخروج'),
+                          SizedBox(width: 8),
+                          Text(
+                            'تسجيل الخروج',
+                            style: TextStyle(
+                              fontWeight: FontWeight.w600,
+                              fontSize: 15,
+                            ),
+                          ),
                         ],
                       ),
                     ),

@@ -12,7 +12,6 @@ class OpenAIService {
   // You should store this securely, not in code
   // Consider using flutter_dotenv or secure storage
   static const String _apiKey = 'YOUR_OPENAI_API_KEY_HERE';
-
   final MosqueContextService _contextService = MosqueContextService();
   final EventService _eventService = EventService();
 

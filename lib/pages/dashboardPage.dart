@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_timer_countdown/flutter_timer_countdown.dart';
 import 'package:mosque_dashboard/data/userData.dart';
+import 'package:mosque_dashboard/appConsts.dart';
 
 class DashboardPage extends StatelessWidget {
   const DashboardPage({super.key});
@@ -21,7 +22,7 @@ class DashboardPage extends StatelessWidget {
             style: TextStyle(
               fontSize: 28,
               fontWeight: FontWeight.bold,
-              color: Color(0xFFFFD700),
+              color: AppConsts.secondaryColor,
             ),
           ),
           SizedBox(height: 20),
@@ -33,7 +34,7 @@ class DashboardPage extends StatelessWidget {
                 style: TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.w600,
-                  color: Colors.white,
+                  color: AppConsts.textColorPrimary,
                 ),
               ),
               SizedBox(width: 15),
@@ -42,7 +43,7 @@ class DashboardPage extends StatelessWidget {
                 style: TextStyle(
                   fontSize: 30,
                   fontWeight: FontWeight.w900,
-                  color: Colors.white,
+                  color: AppConsts.textColorPrimary,
                 ),
               ),
             ],
@@ -55,7 +56,7 @@ class DashboardPage extends StatelessWidget {
                 "أنت تنشط في",
                 style: TextStyle(
                   fontSize: 24,
-                  color: Colors.white,
+                  color: AppConsts.textColorSecondary,
                 ),
               ),
               SizedBox(width: 15),
@@ -64,7 +65,7 @@ class DashboardPage extends StatelessWidget {
                 style: TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.w600,
-                  color: Colors.white,
+                  color: AppConsts.textColorPrimary,
                 ),
               ),
             ],
@@ -111,21 +112,28 @@ class DashboardPage extends StatelessWidget {
     return Container(
       padding: EdgeInsets.all(20),
       decoration: BoxDecoration(
-        color: Colors.white.withOpacity(0.1),
-        borderRadius: BorderRadius.circular(15),
-        border: Border.all(color: Color(0xFFFFD700).withOpacity(0.3)),
+        color: AppConsts.surfaceColor,
+        borderRadius: BorderRadius.circular(16),
+        border: Border.all(color: AppConsts.borderColor, width: 1),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.2),
+            blurRadius: 8,
+            offset: Offset(0, 4),
+          ),
+        ],
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Icon(icon, size: screenWidth / 35, color: Color(0xFFFFD700)),
+          Icon(icon, size: screenWidth / 35, color: AppConsts.secondaryColor),
           SizedBox(height: screenWidth / 100),
           Text(
             value,
             style: TextStyle(
               fontSize: screenWidth / 57,
               fontWeight: FontWeight.bold,
-              color: Colors.white,
+              color: AppConsts.textColorPrimary,
             ),
           ),
           SizedBox(height: screenWidth / 280),
@@ -133,7 +141,7 @@ class DashboardPage extends StatelessWidget {
             title,
             style: TextStyle(
               fontSize: 14,
-              color: Colors.white70,
+              color: AppConsts.textColorTertiary,
             ),
             textAlign: TextAlign.center,
           ),
@@ -147,14 +155,21 @@ class DashboardPage extends StatelessWidget {
     return Container(
       padding: EdgeInsets.all(20),
       decoration: BoxDecoration(
-        color: Colors.white.withOpacity(0.1),
-        borderRadius: BorderRadius.circular(15),
-        border: Border.all(color: Color(0xFFFFD700).withOpacity(0.3)),
+        color: AppConsts.surfaceColor,
+        borderRadius: BorderRadius.circular(16),
+        border: Border.all(color: AppConsts.borderColor, width: 1),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.2),
+            blurRadius: 8,
+            offset: Offset(0, 4),
+          ),
+        ],
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Icon(icon, size: screenWidth / 35, color: Color(0xFFFFD700)),
+          Icon(icon, size: screenWidth / 35, color: AppConsts.secondaryColor),
           SizedBox(height: screenWidth / 100),
           Directionality(
             textDirection: TextDirection.ltr,
@@ -166,7 +181,7 @@ class DashboardPage extends StatelessWidget {
               timeTextStyle: TextStyle(
                 fontSize: screenWidth / 57,
                 fontWeight: FontWeight.bold,
-                color: Colors.white,
+                color: AppConsts.textColorPrimary,
               ),
               enableDescriptions: false,
             ),
@@ -176,7 +191,7 @@ class DashboardPage extends StatelessWidget {
             title,
             style: TextStyle(
               fontSize: 14,
-              color: Colors.white70,
+              color: AppConsts.textColorTertiary,
             ),
             textAlign: TextAlign.center,
           ),

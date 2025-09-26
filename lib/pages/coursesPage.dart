@@ -77,7 +77,7 @@ class _CoursesPageState extends State<CoursesPage> {
           Text(
             'دورات تعليمية متخصصة لإدارة المساجد والأنشطة الدعوية',
             style: TextStyle(
-              color: Colors.white70,
+              color: AppConsts.textColorSecondary,
               fontSize: 16,
             ),
           ),
@@ -195,15 +195,16 @@ class _CoursesPageState extends State<CoursesPage> {
         _progressService.getCompletedLessonsCount(course.id);
 
     return Card(
-      elevation: 4,
-      color: AppConsts.polor,
+      elevation: 6,
+      color: AppConsts.surfaceColor,
+      shadowColor: Colors.black.withOpacity(0.3),
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(12),
-        side: const BorderSide(color: AppConsts.secondaryColor, width: 1),
+        borderRadius: BorderRadius.circular(16),
+        side: BorderSide(color: AppConsts.borderColor, width: 1),
       ),
       child: InkWell(
         onTap: () => _navigateToCourseDetail(course),
-        borderRadius: BorderRadius.circular(12),
+        borderRadius: BorderRadius.circular(16),
         child: Padding(
           padding: const EdgeInsets.all(20),
           child: Column(

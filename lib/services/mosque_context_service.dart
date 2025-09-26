@@ -110,54 +110,6 @@ class MosqueContextService {
         // TODO: Add default suggestions
       ];
     }
-
-    final priorities = context['priorities'] as String?;
-    final audiences = context['audiences'] as String?;
-
-    // Add suggestions based on priorities
-    if (priorities?.contains('تحفيظ') == true ||
-        priorities?.contains('قرآن') == true) {
-      suggestions.add('برنامج تحفيظ القرآن');
-    }
-
-    if (priorities?.contains('أسرة') == true ||
-        priorities?.contains('عائل') == true) {
-      suggestions.add('فعاليات عائلية');
-    }
-
-    if (priorities?.contains('شباب') == true) {
-      suggestions.add('برنامج للشباب');
-    }
-
-    // Add suggestions based on audiences
-    if (audiences?.contains('أطفال') == true) {
-      suggestions.add('أنشطة للأطفال');
-    }
-
-    if (audiences?.contains('نساء') == true ||
-        audiences?.contains('أخوات') == true) {
-      suggestions.add('برامج نسائية');
-    }
-
-    if (audiences?.contains('كبار') == true ||
-        audiences?.contains('مسن') == true) {
-      suggestions.add('فعاليات لكبار السن');
-    }
-
-    if (audiences?.contains('جدد') == true ||
-        audiences?.contains('جديد') == true) {
-      suggestions.add('برنامج تعريفي للمسلمين الجدد');
-    }
-
-    // Default suggestions if none match
-    if (suggestions.isEmpty) {
-      suggestions = [
-        'برنامج تعليمي عام',
-        'فعاليات اجتماعية',
-        'أنشطة ثقافية',
-      ];
-    }
-
     return suggestions.take(4).toList();
   }
 }
