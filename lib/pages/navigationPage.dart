@@ -13,14 +13,32 @@ class NavigationPage extends StatefulWidget {
 
 class _NavigationPageState extends State<NavigationPage> {
   int _selectedIndex = 0;
+  VoidCallback? _refreshCalendarCallback;
 
-  final List<Widget> _pages = [
-    DashboardPage(),
-    CalendarPage(),
-    AIPage(),
-    CoursesPage(),
-    SettingsPage(),
-  ];
+  late final List<Widget> _pages;
+
+  @override
+  void initState() {
+    super.initState();
+    _pages = [
+      DashboardPage(),
+      CalendarPage(
+          onRefreshRequested: (callback) =>
+              _refreshCalendarCallback = callback),
+      AIPage(onEventsAdded: _refreshCalendar),
+      CoursesPage(),
+      SettingsPage(),
+    ];
+  }
+
+  void _refreshCalendar() {
+    // Refresh calendar when events are added from AI
+    _refreshCalendarCallback?.call();
+    // Switch to calendar tab to show the new events
+    setState(() {
+      _selectedIndex = 1;
+    });
+  }
 
   final List<NavigationItem> _navItems = [
     NavigationItem(icon: Icons.dashboard, label: 'لوحة التحكم'),

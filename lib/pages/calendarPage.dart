@@ -6,6 +6,10 @@ import '../services/event_service.dart';
 import '../widgets/event_dialog.dart';
 
 class CalendarPage extends StatefulWidget {
+  final Function(VoidCallback)? onRefreshRequested;
+
+  const CalendarPage({super.key, this.onRefreshRequested});
+
   @override
   _CalendarPageState createState() => _CalendarPageState();
 }
@@ -19,6 +23,8 @@ class _CalendarPageState extends State<CalendarPage> {
   void initState() {
     super.initState();
     _loadEvents();
+    // Register refresh callback with parent
+    widget.onRefreshRequested?.call(_loadEvents);
   }
 
   Future<void> _loadEvents() async {
