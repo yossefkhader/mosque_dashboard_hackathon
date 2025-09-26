@@ -1,11 +1,11 @@
 {
     "id": "mosque_media_course_v1",
-    "title": "دليل سريع للجان المساجد: صناعة مواد إعلانيّة للمحاضرات والأنشطة",
+    "title": "صناعة مواد إعلانيّة للمحاضرات والأنشطة",
     "lang": "ar",
     "rtl": true,
     "level": "مبتدئ",
     "estimatedTotalTimeMin": 240,
-    "audience": "أعضاء اللجان المسجدية غير المتمرسين تقنيًا",
+    "audience": "اللجنة الإعلامية",
     "outcomes": [
       "تصميم منشور/ملصق عربي واضح خلال 15–30 دقيقة باستخدام Canva",
       "إنتاج فيديو قصير (Teaser) للجوال باستخدام CapCut",
@@ -13,29 +13,6 @@
       "إطلاق ونشر المحتوى عبر واتساب/إنستغرام بخطوات بسيطة",
       "إدارة هوية بصرية مسجديّة ثابتة (ألوان، خطوط عربية، شعار)"
     ],
-    "brandingDefaults": {
-      "colors": {
-        "primary": "#00934b",
-        "secondary": "#ffd602",
-        "neutralDark": "#222222",
-        "neutralLight": "#f6f6f6"
-      },
-      "fonts": [
-        {
-          "name": "Noto Sans Arabic",
-          "link": "https://fonts.google.com/noto/specimen/Noto%2BSans%2BArabic"
-        },
-        {
-          "name": "Noto Naskh Arabic",
-          "link": "https://fonts.google.com/noto/specimen/Noto%2BNaskh%2BArabic"
-        }
-      ],
-      "logoGuidelines": [
-        "استخدم الشعار بأرضية شفافة (PNG)",
-        "اترك هامشًا داخليًا حول الشعار لا يقل عن 24px",
-        "لا تغيّر ألوان الشعار—استعمل النسخة أحاديّة عند الخلفيات المزدحمة"
-      ]
-    },
     "modules": [
       {
         "id": "m1",

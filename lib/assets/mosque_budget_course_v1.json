@@ -1,11 +1,11 @@
 {
     "id": "mosque_budget_course_v1",
-    "title": "إدارة ميزانية المسجد السنوية: دليل مبسّط للجان",
+    "title": "إدارة ميزانية المسجد السنوية",
     "lang": "ar",
     "rtl": true,
     "level": "مبتدئ",
     "estimatedTotalTimeMin": 270,
-    "audience": "أعضاء اللجان المسجدية غير المتمرسين تقنيًا",
+    "audience": "اللجنة المالية",
     "outcomes": [
       "فهم هيكل الميزانية السنوية (إيرادات، مصروفات، احتياطي)",
       "إعداد جدول بسيط على Excel/Google Sheets لتتبع شهري",
@@ -13,18 +13,6 @@
       "وضع ضوابط صرف شفافة وتقارير شهرية مختصرة",
       "إغلاق السنة وإصدار تقرير مالي مبسّط لأهل الحي/المتبرعين"
     ],
-    "brandingDefaults": {
-      "colors": {
-        "primary": "#00934b",
-        "secondary": "#ffd602",
-        "neutralDark": "#222222",
-        "neutralLight": "#f6f6f6"
-      },
-      "fonts": [
-        { "name": "Noto Sans Arabic", "link": "https://fonts.google.com/noto/specimen/Noto%2BSans%2BArabic" },
-        { "name": "Noto Naskh Arabic", "link": "https://fonts.google.com/noto/specimen/Noto%2BNaskh%2BArabic" }
-      ]
-    },
     "modules": [
       {
         "id": "m1",
